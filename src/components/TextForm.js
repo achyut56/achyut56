@@ -1,16 +1,19 @@
 import React, {useState}from 'react'
 
 
+
 export default function TexForm(props) {
     const handleUpClick = () => {
         // console.log("UpperCase was clicked"+ Text)
         let newText = Text.toUpperCase();
         setText(newText)
+        props.showAlert("converted to upper case","success")
     }
 
     const handleLoClick = ()=> {
         let newText = Text.toLowerCase();
         setText(newText)
+        props.showAlert("converted to lower case","success")
     }
     const handleCopy = ()=> {
         var text = document.getElementById('myBox');
@@ -21,6 +24,7 @@ export default function TexForm(props) {
     const handleClearClick =()=> {
         let newText = ""
         setText(newText)
+        props.showAlert("text cleared sucessfully","success")
     }
 
     const handleCaClick = ()=> {
@@ -63,6 +67,7 @@ export default function TexForm(props) {
             <p>{Text.length>0?Text:"Enter some text in above textbox to preview."}</p>
 
         </div>
+        <outlet/>
         </>
   );
 }
