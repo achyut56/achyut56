@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 /* danger = red, success=green, primary=blue in bootstrap
 */
 
+// Some change
 export default function Navbar(props) {
   return (
     <>
